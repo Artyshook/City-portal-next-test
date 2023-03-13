@@ -26,7 +26,7 @@ const Article = ({ articles }: ArticleProps) => {
             {articles && (
                 <>
                     <div>{articles.perex && <p>{articles.perex}</p>}</div>
-                    {articles.content && <p>{articles.content}</p>}
+                    {articles.content && <p><div dangerouslySetInnerHTML={{__html: articles.content}} ></div></p>}
                     {articles.image && <img src={articles.image} alt="Article" />}
                 </>
             )}
