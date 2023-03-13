@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Article, {ArticleData} from "../../components/Article";
+import Article, {ArticleData} from "../../components/articles/Article";
 import axios from "axios";
 
 type ArticlePageProps = {

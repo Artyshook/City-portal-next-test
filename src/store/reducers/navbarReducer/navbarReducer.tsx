@@ -1,4 +1,5 @@
-import { NavbarAction, StoreState, FETCH_NAVBAR_SUCCESS } from "./interfaces";
+import { NavbarAction, StoreState,  } from "../../interfaces/interfaces";
+import {FETCH_NAVBAR_SUCCESS} from "@/store/constants/constants";
 
 const initialState: StoreState = {
   links: [],

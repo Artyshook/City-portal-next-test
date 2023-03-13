@@ -1,8 +1,8 @@
 import {
   FooterAction,
   StoreStateFooter,
-  FETCH_FOOTER_SUCCESS,
-} from "./interfaces";
+} from "../../interfaces/interfaces";
+import {FETCH_FOOTER_SUCCESS} from "@/store/constants/constants";
 
 const initialStateFooter: StoreStateFooter = {
   data: null,

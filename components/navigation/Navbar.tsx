@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
 import { ThunkDispatch } from "@reduxjs/toolkit";
-import { fetchNavbar } from "@/store";
-import { NavbarAction, StoreStateAll } from "@/store/interfaces";
-import { NavbarItem } from "@/store/interfaces";
+import { NavbarAction, StoreStateAll } from "@/store/interfaces/interfaces";
+import { NavbarItem } from "@/store/interfaces/interfaces";
+import {fetchNavbar} from "@/store/api/fetchNavbar/fetchNavbar";
 
 export const Navbar = () => {
   const links: NavbarItem[] = useSelector(
@@ -32,7 +32,7 @@ export const Navbar = () => {
       >
         {links?.map((link) => (
           <li key={link.name}>
-            <Link href={`${link.uri}`}>{link.name}</Link>
+            <Link href={`${link.uri}`} >{link.name}</Link>
           </li>
         ))}
       </div>

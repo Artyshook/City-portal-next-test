@@ -1,3 +1,12 @@
+import {Dispatch} from "redux";
+import {
+  FETCH_FOOTER,
+  FETCH_FOOTER_FAILURE, FETCH_FOOTER_SUCCESS,
+  FETCH_NAVBAR,
+  FETCH_NAVBAR_FAILURE,
+  FETCH_NAVBAR_SUCCESS
+} from "@/store/constants/constants";
+
 export interface NavbarItem {
   name: string;
   uri: string;
@@ -52,9 +61,6 @@ export interface StoreState {
   links: NavbarItem[];
 }
 
-export const FETCH_NAVBAR_SUCCESS = "FETCH_NAVBAR_SUCCESS";
-export const FETCH_NAVBAR_FAILURE = "FETCH_NAVBAR_FAILURE";
-export const FETCH_NAVBAR = "FETCH_NAVBAR";
 
 export interface FetchNavbarAction {
   type: typeof FETCH_NAVBAR;
@@ -78,9 +84,6 @@ export type NavbarAction =
 export interface StoreStateFooter {
   data: FooterData | null;
 }
-export const FETCH_FOOTER_SUCCESS = "FETCH_FOOTER_SUCCESS";
-export const FETCH_FOOTER_FAILURE = "FETCH_FOOTER_FAILURE";
-export const FETCH_FOOTER = "FETCH_FOOTER";
 
 export interface FetchFooterAction {
   type: typeof FETCH_FOOTER;

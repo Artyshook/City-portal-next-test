@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ThunkDispatch } from "@reduxjs/toolkit";
-import { fetchFooter } from "@/store/index";
-import { StoreStateAll, FooterAction } from "@/store/interfaces";
-import { FooterData } from "@/store/interfaces";
+import { StoreStateAll, FooterAction } from "@/store/interfaces/interfaces";
+import { FooterData } from "@/store/interfaces/interfaces";
+import {fetchFooter} from "@/store/api/fetchFooter/fetchFooter";
 
 export const Footer = () => {
   const data: FooterData | null = useSelector(
@@ -38,7 +38,7 @@ export const Footer = () => {
               <a href={data.data.youtube} style={{ margin: '0 10px', textDecoration: 'none' }}>Youtube</a>
               <a href={data.data.instagram} style={{ margin: '0 10px', textDecoration: 'none' }}>Instagram</a>
           </div>
-          <div  style={{ textAlign: 'center', marginTop: '20px' }}>{data.data.copyright}</div>
+          <div  style={{ textAlign: 'center', marginTop: '20px' }}>{data.data.copyright.replace(/(<([^>]+)>)/gi, "")}</div>
       </footer>
 
   );
