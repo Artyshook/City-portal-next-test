@@ -1,4 +1,3 @@
-import {Dispatch} from "redux";
 import {
   FETCH_FOOTER,
   FETCH_FOOTER_FAILURE, FETCH_FOOTER_SUCCESS,
@@ -13,6 +12,7 @@ export interface NavbarItem {
 }
 
 export interface NavbarData {
+
   items: NavbarItem[];
 }
 
@@ -58,7 +58,7 @@ export interface FooterData {
 }
 
 export interface StoreState {
-  links: NavbarItem[];
+  data: NavbarApiResponse;
 }
 
 
@@ -68,7 +68,7 @@ export interface FetchNavbarAction {
 
 export interface FetchNavbarSuccessAction {
   type: typeof FETCH_NAVBAR_SUCCESS;
-  payload: NavbarItem[];
+  payload: NavbarApiResponse;
 }
 
 export interface FetchNavbarFailureAction {

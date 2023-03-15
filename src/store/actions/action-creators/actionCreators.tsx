@@ -3,7 +3,7 @@ import {
     FetchFooterSuccessAction,
     FetchNavbarFailureAction,
     FetchNavbarSuccessAction,
-    FooterData,
+    FooterData, NavbarApiResponse, NavbarData,
     NavbarItem
 } from "@/store/interfaces/interfaces";
 import {
@@ -14,11 +14,11 @@ import {
 } from "@/store/constants/constants";
 
 export const fetchNavbarSuccess = (
-    links: NavbarItem[]
+    data: NavbarApiResponse
 ): FetchNavbarSuccessAction => {
     return {
         type: FETCH_NAVBAR_SUCCESS,
-        payload: links,
+        payload: data,
     };
 };
 

@@ -2,21 +2,26 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
 import { ThunkDispatch } from "@reduxjs/toolkit";
-import { NavbarAction, StoreStateAll } from "@/store/interfaces/interfaces";
+import {NavbarAction, NavbarApiResponse, NavbarData, StoreStateAll} from "@/store/interfaces/interfaces";
 import { NavbarItem } from "@/store/interfaces/interfaces";
 import {fetchNavbar} from "@/store/api/fetchNavbar/fetchNavbar";
 
+
 export const Navbar = () => {
-  const links: NavbarItem[] = useSelector(
-    (state: StoreStateAll) => state.navbar.links
+  const links: NavbarApiResponse= useSelector(
+    (state: StoreStateAll) => state.navbar.data
   );
 
-  const dispatch =
-    useDispatch<ThunkDispatch<StoreStateAll, undefined, NavbarAction>>();
+console.log("links", links)
+    // const propertyLinks: NavbarApiResponse['data']= Object.values(links)
+    console.log(links.data.items)
 
-  useEffect(() => {
-    dispatch(fetchNavbar());
-  }, []);
+  //   const dispatch =
+  //   useDispatch<ThunkDispatch<StoreStateAll, undefined, NavbarAction>>();
+  //
+  // useEffect(() => {
+  //   dispatch(fetchNavbar());
+  // }, []);
 
   return (
     <nav>
@@ -30,7 +35,7 @@ export const Navbar = () => {
           fontSize: "1.5rem",
         }}
       >
-        {links?.map((link) => (
+        {links.data.items?.map((link) => (
           <li key={link.name}>
             <Link href={`${link.uri}`} >{link.name}</Link>
           </li>
