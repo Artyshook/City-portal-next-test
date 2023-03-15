@@ -1,10 +1,8 @@
-import {FooterAction, FooterData, NavbarData, StoreStateAll} from "@/store/interfaces/interfaces";
+import {FooterAction, FooterData, NavbarData, StoreStateAll} from "@/store/interfaces";
 import {initStore, store} from "@/store";
-import {fetchFooterSuccess, fetchNavbarSuccess} from "@/store/actions/action-creators/actionCreators";
-import App from "@/pages/_app";
 import {GetServerSideProps} from "next";
-import {fetchNavbar} from "@/store/api/fetchNavbar/fetchNavbar";
-import {fetchFooter} from "@/store/api/fetchFooter/fetchFooter";
+import {fetchNavbar} from "@/store/api/fetchNavbar";
+import {fetchFooter} from "@/store/api/fetchFooter";
 import {useDispatch} from "react-redux";
 import {ThunkDispatch} from "@reduxjs/toolkit";
 

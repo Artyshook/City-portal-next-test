@@ -1,20 +1,14 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ThunkDispatch } from "@reduxjs/toolkit";
-import { StoreStateAll, FooterAction } from "@/store/interfaces/interfaces";
-import { FooterData } from "@/store/interfaces/interfaces";
-import {fetchFooter} from "@/store/api/fetchFooter/fetchFooter";
+import { FooterData } from "@/store/interfaces";
+import {fetchFooter} from "@/store/api/fetchFooter";
+import {StoreStateAll} from "@/store/reducers/interfaces";
 
 export const Footer = () => {
   const data: FooterData | null = useSelector(
     (state: StoreStateAll) => state.footer.data
   );
-  const dispatch =
-    useDispatch<ThunkDispatch<StoreStateAll, undefined, FooterAction>>();
-
-  useEffect(() => {
-    dispatch(fetchFooter());
-  }, [dispatch]);
   if (!data) return null;
   return (
       <footer style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'column' }}>

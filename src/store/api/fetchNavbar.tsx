@@ -1,8 +1,10 @@
 import {ThunkAction, ThunkDispatch} from "@reduxjs/toolkit";
-import {NavbarAction, NavbarApiResponse, StoreState} from "@/store/interfaces/interfaces";
+import {NavbarApiResponse, } from "@/store/interfaces";
 import {FETCH_NAVBAR} from "@/store/constants/constants";
-import {fetchNavbarFailure, fetchNavbarSuccess} from "@/store/actions/action-creators/actionCreators";
+import {fetchNavbarFailure, fetchNavbarSuccess} from "@/store/actions/actionCreators";
 import axios from "axios";
+import {StoreState} from "@/store/reducers/interfaces";
+import {NavbarAction} from "@/store/actions/interfaces";
 
 export const fetchNavbar = (): ThunkAction<
     Promise<void>,

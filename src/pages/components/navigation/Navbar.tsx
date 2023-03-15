@@ -2,27 +2,15 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
 import { ThunkDispatch } from "@reduxjs/toolkit";
-import {NavbarAction, NavbarApiResponse, NavbarData, StoreStateAll} from "@/store/interfaces/interfaces";
-import { NavbarItem } from "@/store/interfaces/interfaces";
-import {fetchNavbar} from "@/store/api/fetchNavbar/fetchNavbar";
+import {NavbarApiResponse, NavbarItem} from "@/store/interfaces";
+import {fetchNavbar} from "@/store/api/fetchNavbar";
+import {StoreStateAll} from "@/store/reducers/interfaces";
 
 
 export const Navbar = () => {
-  const links: NavbarApiResponse= useSelector(
+  const links: NavbarApiResponse | null= useSelector(
     (state: StoreStateAll) => state.navbar.data
   );
-
-console.log("links", links)
-    // const propertyLinks: NavbarApiResponse['data']= Object.values(links)
-    console.log(links.data.items)
-
-  //   const dispatch =
-  //   useDispatch<ThunkDispatch<StoreStateAll, undefined, NavbarAction>>();
-  //
-  // useEffect(() => {
-  //   dispatch(fetchNavbar());
-  // }, []);
-
   return (
     <nav>
       <div
@@ -35,7 +23,7 @@ console.log("links", links)
           fontSize: "1.5rem",
         }}
       >
-        {links.data.items?.map((link) => (
+        {links?.data.items?.map((link) => (
           <li key={link.name}>
             <Link href={`${link.uri}`} >{link.name}</Link>
           </li>
@@ -51,7 +39,6 @@ console.log("links", links)
           fontSize: "1.5rem",
         }}
       >
-        {/*<Link href="/articles">Articles</Link>*/}
           <Link href="/vyrazte-za-kraskou-a-zviretem-nebo-za-loutkami-vikend-bude-kulturni">
               <p>Example Article</p>
           </Link>

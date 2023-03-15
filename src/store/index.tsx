@@ -3,9 +3,9 @@ import {
   configureStore,
 } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
-import { footerReducer } from "./reducers/footeReducer/footerReducer";
-import { navbarReducer } from "./reducers/navbarReducer/navbarReducer";
+
 import {applyMiddleware, createStore} from "redux";
+import {footerReducer, navbarReducer} from "@/store/reducers/allReducers";
 
 
 export const rootReducer = combineReducers({

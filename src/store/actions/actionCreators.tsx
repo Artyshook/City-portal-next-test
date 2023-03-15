@@ -1,17 +1,21 @@
 import {
-    FetchFooterFailureAction,
-    FetchFooterSuccessAction,
-    FetchNavbarFailureAction,
-    FetchNavbarSuccessAction,
+
     FooterData, NavbarApiResponse, NavbarData,
     NavbarItem
-} from "@/store/interfaces/interfaces";
+} from "@/store/interfaces";
 import {
     FETCH_FOOTER_FAILURE,
     FETCH_FOOTER_SUCCESS,
     FETCH_NAVBAR_FAILURE,
     FETCH_NAVBAR_SUCCESS
 } from "@/store/constants/constants";
+import {
+    FetchFooterFailureAction,
+    FetchFooterSuccessAction,
+    FetchNavbarFailureAction,
+    FetchNavbarSuccessAction
+} from "@/store/actions/interfaces";
+
 
 export const fetchNavbarSuccess = (
     data: NavbarApiResponse
